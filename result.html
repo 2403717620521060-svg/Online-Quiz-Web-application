@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Result | Cricket Quiz Arena</title>
+  <link rel="icon" type="image/svg+xml" href="images/ball.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><img class="brand-ball" src="images/ball.svg" alt=""> Cricket Quiz Arena</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div id="alert"></div>
+      <div id="loading" class="loading"><div class="spinner"></div>Loading your result...</div>
+
+      <div id="result" class="hidden">
+        <div class="result-hero">
+          <div class="score-ring" id="score-ring" style="--pct:0">
+            <strong id="score">0/10</strong>
+            <span id="percent">0%</span>
+          </div>
+          <div>
+            <span class="eyebrow">Innings complete</span>
+            <h1 id="headline">Well played!</h1>
+            <p id="summary"></p>
+            <p id="saved-note" class="small"></p>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><strong id="correct">0</strong><span>Correct</span></div>
+          <div class="stat"><strong id="wrong">0</strong><span>Wrong</span></div>
+          <div class="stat"><strong id="skipped">0</strong><span>Not answered</span></div>
+          <div class="stat"><strong id="time">0s</strong><span>Time taken</span></div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+          <a href="index.html" class="btn btn-primary">Play Again</a>
+          <a href="leaderboard.html" class="btn btn-dark">View Leaderboard</a>
+        </div>
+
+        <h2>Answers &amp; correct answers</h2>
+        <div id="review"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; Cricket Quiz Arena &ndash; OSS Project</span>
+      <span>Result stored in the "quizresults" collection</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/result.js"></script>
+</body>
+</html>

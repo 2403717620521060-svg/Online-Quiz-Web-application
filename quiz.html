@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz | Cricket Quiz Arena</title>
+  <link rel="icon" type="image/svg+xml" href="images/ball.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><img class="brand-ball" src="images/ball.svg" alt=""> Cricket Quiz Arena</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div id="alert"></div>
+
+      <div id="loading" class="loading"><div class="spinner"></div>Loading your quiz...</div>
+
+      <div id="quiz" class="hidden">
+        <div class="quiz-head">
+          <div>
+            <span class="eyebrow" style="color:var(--green)">Batting now</span>
+            <h2 style="margin:0" id="player-title">Quiz</h2>
+          </div>
+          <strong id="question-count">Question 1 of 10</strong>
+        </div>
+        <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+
+        <div class="quiz-layout">
+          <div class="card">
+            <span class="tag" id="category">Category</span>
+            <h3 class="question-text" id="question-text"></h3>
+            <div id="options"></div>
+            <div class="quiz-actions">
+              <button class="btn btn-outline" id="prev-btn">&larr; Previous</button>
+              <button class="btn btn-primary" id="next-btn">Next &rarr;</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <strong>Questions</strong>
+            <div class="dots" id="dots"></div>
+            <p class="small muted" id="answered-text">0 answered</p>
+            <button class="btn btn-dark btn-block" id="submit-btn">Submit Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Confirm submit -->
+  <div class="modal-backdrop hidden" id="confirm-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <h3 id="confirm-title">Submit your quiz?</h3>
+      <p id="confirm-text"></p>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="cancel-btn">Keep playing</button>
+        <button class="btn btn-primary" id="confirm-btn">Yes, submit</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; Cricket Quiz Arena &ndash; OSS Project</span>
+      <span>Answers are checked on the server</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

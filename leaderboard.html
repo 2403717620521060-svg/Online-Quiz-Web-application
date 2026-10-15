@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leaderboard | Cricket Quiz Arena</title>
+  <link rel="icon" type="image/svg+xml" href="images/ball.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><img class="brand-ball" src="images/ball.svg" alt=""> Cricket Quiz Arena</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="leaderboard.html" class="active">Leaderboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-title">
+        <div>
+          <span class="eyebrow" style="color:var(--green)">Hall of fame</span>
+          <h2>Leaderboard</h2>
+          <p class="muted small" style="margin:4px 0 0">Ranked by percentage, then by fastest time. Loaded live from MongoDB.</p>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-outline" id="refresh-btn">&#8635; Refresh</button>
+          <a href="index.html" class="btn btn-primary">Play Quiz</a>
+        </div>
+      </div>
+
+      <div id="alert"></div>
+
+      <div class="stats">
+        <div class="stat"><strong id="s-players">0</strong><span>Players</span></div>
+        <div class="stat"><strong id="s-quizzes">0</strong><span>Quizzes completed</span></div>
+        <div class="stat"><strong id="s-average">0%</strong><span>Average score</span></div>
+        <div class="stat"><strong id="s-best">0%</strong><span>Best score</span></div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rank</th><th>Player</th><th>College / Team</th><th>Score</th><th>%</th><th>Time</th><th>Played</th></tr></thead>
+            <tbody id="leaderboard"><tr><td colspan="7" class="empty">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; Cricket Quiz Arena &ndash; OSS Project</span>
+      <span>Top 20 results</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cricket Quiz Arena</title>
+  <link rel="icon" type="image/svg+xml" href="images/ball.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html"><img class="brand-ball" src="images/ball.svg" alt=""> Cricket Quiz Arena</a>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Online Cricket Quiz</span>
+          <h1>Welcome to <span>Cricket Quiz Arena</span></h1>
+          <p>Enter your name, answer multiple-choice cricket questions and see how you rank on the leaderboard. Every result is saved in MongoDB.</p>
+          <div class="hero-stats">
+            <div><strong id="stat-players">0</strong><small>Players</small></div>
+            <div><strong id="stat-quizzes">0</strong><small>Quizzes played</small></div>
+            <div><strong id="stat-best">0%</strong><small>Best score</small></div>
+          </div>
+        </div>
+
+        <!-- Start quiz form: these details are saved in the "players" collection -->
+        <div class="card">
+          <h2>Start a new quiz</h2>
+          <p class="muted small">Random multiple-choice questions &middot; 1 point for each correct answer</p>
+          <div id="alert"></div>
+          <form id="start-form" novalidate>
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" maxlength="40" placeholder="e.g. Sangeeth" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email <span class="optional">(optional)</span></label>
+              <input type="email" id="email" maxlength="100" placeholder="you@example.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="college">College / Team <span class="optional">(optional)</span></label>
+              <input type="text" id="college" maxlength="80" placeholder="e.g. CIT Coimbatore">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" id="start-btn">Start Quiz &rarr;</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="features">
+          <div class="card feature">
+            <div class="icon">1</div>
+            <h3>Enter your name</h3>
+            <p class="muted">Your details are stored in MongoDB so your scores appear on the leaderboard.</p>
+          </div>
+          <div class="card feature">
+            <div class="icon">2</div>
+            <h3>Answer the questions</h3>
+            <p class="muted">Pick one of four options. Move back and forth before you submit.</p>
+          </div>
+          <div class="card feature">
+            <div class="icon">3</div>
+            <h3>See your result</h3>
+            <p class="muted">The server checks your answers, shows the correct ones and saves the result.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow" style="color:var(--green)">Top performers</span>
+            <h2>Leaderboard</h2>
+          </div>
+          <a href="leaderboard.html" class="btn btn-outline">View full leaderboard</a>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Rank</th><th>Player</th><th>Score</th><th>%</th><th>Time</th></tr></thead>
+              <tbody id="top-five"><tr><td colspan="5" class="empty">Loading...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; Cricket Quiz Arena &ndash; OSS Project</span>
+      <span>HTML &middot; CSS &middot; JavaScript &middot; Node.js &middot; Express &middot; MongoDB</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
